@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrafosM1", "GrafosM1\GrafosM1.csproj", "{688C1471-24ED-4F92-9904-25F3ADC3C2EF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{688C1471-24ED-4F92-9904-25F3ADC3C2EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{688C1471-24ED-4F92-9904-25F3ADC3C2EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{688C1471-24ED-4F92-9904-25F3ADC3C2EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{688C1471-24ED-4F92-9904-25F3ADC3C2EF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
