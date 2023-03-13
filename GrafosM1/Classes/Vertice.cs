@@ -16,9 +16,25 @@ public class Vertice
         return label;
     }
 
-    public void AddAresta(int o, int d, int p)
+    public void AddAresta(int o, int d, float p)
     {
         Aresta tempAresta = new Aresta(o, d, p);
         arestas.Add(tempAresta);
+    }
+
+    public void imprimeArestas(int indexVertice)
+    {
+        for (var i = 0; i < arestas.Count; i++)
+        {
+            if (arestas[i].retornaOrigem() == indexVertice)
+            {
+                Console.Write("0 ");
+            }
+
+            if (arestas[i].retornaOrigem() == indexVertice && arestas[i].retornaDestino() == i)
+            {
+                Console.Write("1 ");
+            }
+        }
     }
 }

@@ -2,8 +2,10 @@
 
 using GrafosM1.Classes;
 
-Console.WriteLine("Hello, World!");
+    Console.WriteLine("Hello, World!");
 
- Grafo grafo = new Grafo(false, false);
- grafo.inserirVertice("Teste");
- Console.Write(grafo.labelVertice(0));
+    Matriz grafo = new Matriz(false, false);
+    grafo.inserirVertice("Teste");
+    grafo.inserirVertice("Teste 2");
+    grafo.inserirAresta(0, 1, 0);
+    grafo.imprimeGrafo();

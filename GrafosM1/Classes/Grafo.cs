@@ -2,18 +2,18 @@ namespace GrafosM1.Classes;
 
 public class Grafo
 {
-    private List<Vertice> vertices;
-    private bool direcionado;
-    private bool ponderado;
+    protected List<Vertice> vertices;
+    protected bool direcionado;
+    protected bool ponderado;
 
-    public Grafo(bool d, bool p)
+    protected Grafo(bool d, bool p)
     {
         direcionado = d;
         ponderado = p;
         vertices = new List<Vertice>();
     }
 
-    public bool inserirVertice(string label)
+    protected bool InserirVerticeP(string label)
     {
         Vertice tempVertice = new Vertice(label);
         if (tempVertice != null)
@@ -25,20 +25,39 @@ public class Grafo
         return false;
     }
 
-    public string labelVertice(int indice)
+    protected string labelVerticeP(int indice)
     {
         return vertices[indice].retornaLabel();
     }
 
-    public bool inserirAresta(int o, int d, int p)
+    protected bool inserirArestaP(int o, int d, float p)
     {
-        
-        vertices[o].AddAresta(o, d, p);
-        if (ponderado)
+        if (direcionado)
         {
-            vertices[d].AddAresta(d, o, p);
+            if (!ponderado)
+            {
+                vertices[o].AddAresta(o, d, 0);
+            }
+            if (ponderado)
+            {
+                vertices[d].AddAresta(o, d, p);
+            }
+        }
+        else
+        {
+            if (!ponderado)
+            {
+                vertices[o].AddAresta(o, d, 0);
+                vertices[d].AddAresta(d, o, 0);
+            }
+            if (ponderado)
+            {
+                vertices[o].AddAresta(o, d, p);
+                vertices[d].AddAresta(d, o, p);
+            }
         }
 
         return true;
     }
+    
 }
