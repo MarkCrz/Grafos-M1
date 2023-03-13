@@ -1,8 +1,8 @@
 namespace GrafosM1.Classes;
 
-public class Matriz : Grafo
+public class Lista : Grafo
 {
-    public Matriz(bool d, bool p) : base(d, p)
+    public Lista(bool d, bool p) : base(d, p)
     {
         direcionado = d;
         ponderado = p;
@@ -31,23 +31,18 @@ public class Matriz : Grafo
     
     public void imprimeGrafo()
     {
-        string tamCol = "- ";
         for (var i = 0; i < vertices.Count; i++)
         {
-            tamCol = tamCol + (i + 1) + " ";
-        }
-        Console.Write(tamCol + "\n");
-        
-        for (var i = 0; i < vertices.Count; i++)
-        {
-            Console.Write((i + 1) + " ");
-            vertices[i].imprimeArestasMatriz(vertices.Count);
+            Console.Write((i + 1) + " - ");
+            vertices[i].imprimeArestasLista(vertices.Count);
             Console.Write("\n");
         }
     }
-
+    
     public bool existeAresta(int origem, int destino)
     {
         return existeArestaP(origem, destino);
     }
+    
+    
 }

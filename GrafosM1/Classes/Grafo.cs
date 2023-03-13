@@ -60,4 +60,25 @@ public class Grafo
         return true;
     }
     
+    protected void imprimeArestaP(int indexVertice, int indexAresta)
+    {
+        vertices[indexVertice].imprimeAresta(indexAresta);
+    }
+
+    protected bool existeArestaP(int origem, int destino)
+    {
+        return vertices[origem].existeArestaV(destino);
+    }
+
+    public float pesoAresta(int origem, int destino)
+    {
+        return vertices[origem].retornaPesoVertice(destino);
+    }
+    
+    public int[] retornaVizinhos(int vertice)
+    {
+        int indexCorreto = vertice - 1;
+        int[] tempArray = vertices[indexCorreto].retornaVizinhosV();
+        return tempArray;
+    }
 }

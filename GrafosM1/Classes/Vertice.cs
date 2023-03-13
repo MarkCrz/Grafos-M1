@@ -22,19 +22,83 @@ public class Vertice
         arestas.Add(tempAresta);
     }
 
-    public void imprimeArestas(int indexVertice)
+    public void imprimeAresta(int index)
     {
-        for (var i = 0; i < arestas.Count; i++)
+        arestas[index].imprimeAresta();
+    }
+
+    public void imprimeArestasMatriz( int quantVertices)
+    {
+        bool possui = false;
+        for (var i = 0; i < quantVertices; i++)
         {
-            if (arestas[i].retornaOrigem() == indexVertice)
+            possui = false;
+            for (var j = 0; j < arestas.Count; j++)
+            {
+                if (arestas[j].retornaDestino() == i)
+                {
+                    possui = true;
+                    Console.Write("1 ");
+                }
+            }
+
+            if (!possui)
             {
                 Console.Write("0 ");
             }
+            
+        }
+    }
 
-            if (arestas[i].retornaOrigem() == indexVertice && arestas[i].retornaDestino() == i)
+    public void imprimeArestasLista(int quantVertices)
+    {
+        for (var i = 0; i < quantVertices; i++)
+        {
+            for (var j = 0; j < arestas.Count; j++)
             {
-                Console.Write("1 ");
+                if (arestas[j].retornaDestino() == i)
+                {
+                    Console.Write((arestas[j].retornaDestino() + 1) + " ");
+                }
             }
         }
+    }
+
+    public bool existeArestaV(int destino)
+    {
+        for (var i = 0; i < arestas.Count; i++)
+        {
+            if (arestas[i].retornaDestino() == destino)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public float retornaPesoVertice(int destino)
+    {
+        float peso = 0;
+        for (var i = 0; i < arestas.Count; i++)
+        {
+            if (arestas[i].retornaDestino() == destino)
+            {
+                peso = arestas[i].retornaPeso();
+            }
+        }
+
+        return peso;
+    }
+
+    public int[] retornaVizinhosV()
+    {
+        int[] tempArray = new int[arestas.Count];
+        for (var i = 0; i < arestas.Count; i++)
+        {
+            tempArray[i] = (arestas[i].retornaDestino() + 1);
+        }
+
+        return tempArray;
     }
 }

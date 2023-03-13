@@ -27,4 +27,10 @@ public class Aresta
     {
         return peso;
     }
+
+    public void imprimeAresta()
+    {
+        Console.Write("\nOrigem: " + origem + "\nDestino: " + destino + "\nPeso: " + peso + "\n");
+    }
+    
 }

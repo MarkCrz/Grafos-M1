@@ -2,10 +2,41 @@
 
 using GrafosM1.Classes;
 
-    Console.WriteLine("Hello, World!");
+    Matriz matriz = new Matriz(true, false);
+    matriz.inserirVertice("Teste");
+    matriz.inserirVertice("Teste 2");
+    matriz.inserirVertice("Teste 3");
+    matriz.inserirAresta(0, 1, 0);
+    matriz.inserirAresta(0, 2, 0);
+    Console.Write("Existe aresta: " + matriz.existeAresta(1, 0) + "\n");
+    
+    Console.Write("Vizinhos: ");
+    var vizinhos = matriz.retornaVizinhos(2);
 
-    Matriz grafo = new Matriz(false, false);
-    grafo.inserirVertice("Teste");
-    grafo.inserirVertice("Teste 2");
-    grafo.inserirAresta(0, 1, 0);
-    grafo.imprimeGrafo();
+    foreach (var vizinho  in vizinhos)
+    {
+        Console.Write(vizinho + " ");
+    }
+    Console.Write("\n");
+    
+    matriz.imprimeGrafo();
+    
+    Lista lista = new Lista(false, false);
+    lista.inserirVertice("Teste");
+    lista.inserirVertice("Teste 2");
+    lista.inserirVertice("Teste 3");
+    lista.inserirAresta(0, 1, 1);
+    lista.inserirAresta(0, 2, 1);
+    Console.Write("\nExiste aresta: " + lista.existeAresta(1, 0) + "\n");
+    Console.Write("Peso: " + lista.pesoAresta(0, 2));
+
+    Console.Write("\nVizinhos: ");
+    vizinhos = lista.retornaVizinhos(1);
+
+    foreach (var vizinho  in vizinhos)
+    {
+        Console.Write(vizinho + " ");
+    }
+
+    Console.Write("\n");
+    lista.imprimeGrafo();

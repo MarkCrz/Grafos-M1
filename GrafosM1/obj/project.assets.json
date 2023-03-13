@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\marco\\RiderProjects\\GrafosM1\\GrafosM1\\GrafosM1.csproj",
+      "projectUniqueName": "C:\\Users\\marco\\Documents\\GitHub\\Grafos-M1\\GrafosM1\\GrafosM1.csproj",
       "projectName": "GrafosM1",
-      "projectPath": "C:\\Users\\marco\\RiderProjects\\GrafosM1\\GrafosM1\\GrafosM1.csproj",
+      "projectPath": "C:\\Users\\marco\\Documents\\GitHub\\Grafos-M1\\GrafosM1\\GrafosM1.csproj",
       "packagesPath": "C:\\Users\\marco\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\marco\\RiderProjects\\GrafosM1\\GrafosM1\\obj\\",
+      "outputPath": "C:\\Users\\marco\\Documents\\GitHub\\Grafos-M1\\GrafosM1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\marco\\AppData\\Roaming\\NuGet\\NuGet.Config"
