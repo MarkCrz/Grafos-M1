@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\marco\\Documents\\GitHub\\Grafos-M1\\GrafosM1\\GrafosM1.csproj": {}
+    "C:\\Users\\Bruno\\OneDrive\\Documentos\\Grafos-M1\\GrafosM1\\GrafosM1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\marco\\Documents\\GitHub\\Grafos-M1\\GrafosM1\\GrafosM1.csproj": {
+    "C:\\Users\\Bruno\\OneDrive\\Documentos\\Grafos-M1\\GrafosM1\\GrafosM1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\marco\\Documents\\GitHub\\Grafos-M1\\GrafosM1\\GrafosM1.csproj",
+        "projectUniqueName": "C:\\Users\\Bruno\\OneDrive\\Documentos\\Grafos-M1\\GrafosM1\\GrafosM1.csproj",
         "projectName": "GrafosM1",
-        "projectPath": "C:\\Users\\marco\\Documents\\GitHub\\Grafos-M1\\GrafosM1\\GrafosM1.csproj",
-        "packagesPath": "C:\\Users\\marco\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\marco\\Documents\\GitHub\\Grafos-M1\\GrafosM1\\obj\\",
+        "projectPath": "C:\\Users\\Bruno\\OneDrive\\Documentos\\Grafos-M1\\GrafosM1\\GrafosM1.csproj",
+        "packagesPath": "C:\\Users\\Bruno\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Bruno\\OneDrive\\Documentos\\Grafos-M1\\GrafosM1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\marco\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Bruno\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -48,12 +48,30 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.14, 6.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[6.0.14, 6.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.14, 6.0.14]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.14, 6.0.14]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
