@@ -81,4 +81,51 @@ public class Grafo
         int[] tempArray = vertices[indexCorreto].retornaVizinhosV();
         return tempArray;
     }
+
+    public bool removerAresta(int origem, int destino)
+    {
+        if (direcionado)
+        {
+            return vertices[origem].removerArestaV(destino);
+        }
+        else
+        { 
+            vertices[origem].removerArestaV(destino); 
+            return vertices[destino].removerArestaV(origem);
+        }
+    }
+
+    protected int retornaIndexVertice(string label)
+    {
+        for (var i = 0; i < vertices.Count; i++)
+        {
+            if (vertices[i].retornaLabel() == label)
+            {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    public bool removerVertice(string label)
+    {
+        int index = retornaIndexVertice(label);
+        
+        Console.Write(index);
+        for (var i = 0; i < vertices.Count; i++)
+        {
+            if (i != index)
+            {
+                if (vertices[i].existeArestaV(index))
+                {
+                    vertices[i].removerArestaV(index);
+                }
+            }
+        }
+        
+        vertices[index].removerTodasArestas();
+        vertices.RemoveAt(index);
+        return true;
+    }
 }

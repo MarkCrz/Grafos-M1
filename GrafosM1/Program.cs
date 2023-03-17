@@ -8,6 +8,7 @@ using GrafosM1.Classes;
     matriz.inserirVertice("Teste 3");
     matriz.inserirAresta(0, 1, 0);
     matriz.inserirAresta(0, 2, 0);
+    matriz.inserirAresta(1, 0, 0);
     Console.Write("Existe aresta: " + matriz.existeAresta(1, 0) + "\n");
     
     Console.Write("Vizinhos: ");
@@ -18,6 +19,9 @@ using GrafosM1.Classes;
         Console.Write(vizinho + " ");
     }
     Console.Write("\n");
+    
+    Console.Write("Remover aresta: " + matriz.removerAresta(0, 2) + "\n");
+    Console.Write("Remover vertice: " + matriz.removerVertice("Teste") + "\n");
     
     matriz.imprimeGrafo();
     
@@ -39,4 +43,8 @@ using GrafosM1.Classes;
     }
 
     Console.Write("\n");
+    
+    Console.Write("Remover aresta: " + lista.removerAresta(0, 2) + "\n");
+    Console.Write("Remover vertice: " + lista.removerVertice("Teste") + "\n");
+
     lista.imprimeGrafo();

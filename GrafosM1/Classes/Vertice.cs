@@ -101,4 +101,26 @@ public class Vertice
 
         return tempArray;
     }
+
+    public bool removerArestaV(int destino)
+    {
+        for (var i = 0; i < arestas.Count; i++)
+        {
+            if (arestas[i].retornaDestino() == destino)
+            {
+                arestas.RemoveAt(i);
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public void removerTodasArestas()
+    {
+        for (var i = 0; i < arestas.Count; i++)
+        {
+            arestas.RemoveAt(i);
+        }
+    }
 }
