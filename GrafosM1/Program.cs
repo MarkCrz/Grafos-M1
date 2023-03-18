@@ -20,12 +20,12 @@ using GrafosM1.Classes;
     }
     Console.Write("\n");
     
-    Console.Write("Remover aresta: " + matriz.removerAresta(0, 2) + "\n");
-    Console.Write("Remover vertice: " + matriz.removerVertice("Teste") + "\n");
+   /* Console.Write("Remover aresta: " + matriz.removerAresta(0, 2) + "\n");
+    Console.Write("Remover vertice: " + matriz.removerVertice("Teste") + "\n"); */
     
     matriz.imprimeGrafo();
-    
-    Lista lista = new Lista(false, false);
+    //primeiro input para direcionada e segundo para ponderada
+    Lista lista = new Lista(false, false); 
     lista.inserirVertice("Teste");
     lista.inserirVertice("Teste 2");
     lista.inserirVertice("Teste 3");
@@ -45,6 +45,6 @@ using GrafosM1.Classes;
     Console.Write("\n");
     
     Console.Write("Remover aresta: " + lista.removerAresta(0, 2) + "\n");
-    Console.Write("Remover vertice: " + lista.removerVertice("Teste") + "\n");
+    Console.Write("Remover vertice: " + lista.removerVertice("Teste") + "\n"); 
 
     lista.imprimeGrafo();
