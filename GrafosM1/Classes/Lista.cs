@@ -53,6 +53,11 @@ public class Lista : Grafo
     {
         return vertices[index];
     }
-    
-    
+
+    public List<Vertice> retornarVertices()
+    {
+        return vertices;
+    }
+
+
 }

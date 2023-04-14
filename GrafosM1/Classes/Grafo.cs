@@ -40,7 +40,7 @@ public class Grafo
             }
             if (ponderado)
             {
-                vertices[d].AddAresta(o, d, p);
+                vertices[o].AddAresta(o, d, p);
             }
         }
         else
@@ -50,7 +50,7 @@ public class Grafo
                 vertices[o].AddAresta(o, d, 0);
                 vertices[d].AddAresta(d, o, 0);
             }
-            if (ponderado)
+            else 
             {
                 vertices[o].AddAresta(o, d, p);
                 vertices[d].AddAresta(d, o, p);

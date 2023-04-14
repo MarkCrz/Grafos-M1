@@ -133,4 +133,14 @@ public class Vertice
     {
         return arestas[i].retornaDestino();
     }
+
+    public float retornarPesoDjikstra(int index)
+    {
+        return (arestas[index].retornaPeso());
+    }
+
+    public int retornarDestinoDjikstra(int index)
+    {
+        return arestas[index].retornaDestino();
+    }
 }

@@ -54,14 +54,16 @@ public class ArquivoTexto
         string[] dados;
         int origem;
         int destino;
-        float pond;
-
+        float pond = 0;
+        
         while (linha != null)
         {
+            Console.Write(linha + "\n");
             dados = linha.Split(" ");
             origem = int.Parse(dados[0]);
             destino = int.Parse(dados[1]);
             pond = 0;
+            Console.Write("Origem: " + dados[0] + "Destino: " + dados[1] + "Peso: " + dados[2]);
 
             if (dados.Length == 3)
             {
