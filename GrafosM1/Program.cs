@@ -20,31 +20,54 @@ using GrafosM1.Classes;
     }
     Console.Write("\n");
     
-   /* Console.Write("Remover aresta: " + matriz.removerAresta(0, 2) + "\n");
-    Console.Write("Remover vertice: " + matriz.removerVertice("Teste") + "\n"); */
+    //Console.Write("Remover aresta: " + matriz.removerAresta(0, 2) + "\n");
+    //Console.Write("Remover vertice: " + matriz.removerVertice("Teste") + "\n");
     
     matriz.imprimeGrafo();
+
+
     //primeiro input para direcionada e segundo para ponderada
     Lista lista = new Lista(false, false); 
-    lista.inserirVertice("Teste");
-    lista.inserirVertice("Teste 2");
-    lista.inserirVertice("Teste 3");
-    lista.inserirAresta(0, 1, 1);
-    lista.inserirAresta(0, 2, 1);
-    Console.Write("\nExiste aresta: " + lista.existeAresta(1, 0) + "\n");
-    Console.Write("Peso: " + lista.pesoAresta(0, 2));
+    //lista.inserirVertice("Teste");
+    //lista.inserirVertice("Teste 2");
+    //lista.inserirVertice("Teste 3");
+    //lista.inserirAresta(0, 1, 1);
+    //lista.inserirAresta(0, 2, 1);
+    //Console.Write("\nExiste aresta: " + lista.existeAresta(1, 0) + "\n");
+    //Console.Write("Peso: " + lista.pesoAresta(0, 2));
+
+    //Console.Write("\nVizinhos: ");
+    //var vizinhos = lista.retornaVizinhos(1);
+
+    //foreach (var vizinho  in vizinhos)
+    //{
+    //    Console.Write(vizinho + " ");
+    //}
+
+    //Console.Write("\n");
+    
+    //Console.Write("Remover aresta: " + lista.removerAresta(0, 2) + "\n");
+    //Console.Write("Remover vertice: " + lista.removerVertice("Teste") + "\n"); 
+    
+    lista.imprimeGrafo();
+    
+    Console.Write("\n\n");
+
+    ArquivoTexto arquivoTexto = new ArquivoTexto("C:\\Users\\marco\\Documents\\GitHub\\Sattra-Parking\\Leitura.txt" ,"C:\\Users\\marco\\Documents\\GitHub\\Sattra-Parking\\Escrita.txt");
+
+    Lista listaTxt = arquivoTexto.criarGrafoLista();
+
+    listaTxt = arquivoTexto.inserirArestas(listaTxt);
 
     Console.Write("\nVizinhos: ");
-    vizinhos = lista.retornaVizinhos(1);
+    vizinhos = listaTxt.retornaVizinhos(0);
 
     foreach (var vizinho  in vizinhos)
     {
         Console.Write(vizinho + " ");
     }
-
-    Console.Write("\n");
     
-    Console.Write("Remover aresta: " + lista.removerAresta(0, 2) + "\n");
-    Console.Write("Remover vertice: " + lista.removerVertice("Teste") + "\n"); 
-
-    lista.imprimeGrafo();
+    listaTxt.imprimeGrafo();
+    
+    BuscaLarguraLista buscaLarguraLista = new BuscaLarguraLista(listaTxt);
+    buscaLarguraLista.BuscarLarguraLista(0, 3);

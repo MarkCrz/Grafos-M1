@@ -123,4 +123,14 @@ public class Vertice
             arestas.RemoveAt(i);
         }
     }
+
+    public int retornarQuantArestas()
+    {
+        return arestas.Count;
+    }
+
+    public int retornarDestino(int i)
+    {
+        return arestas[i].retornaDestino();
+    }
 }

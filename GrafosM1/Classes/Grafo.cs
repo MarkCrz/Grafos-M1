@@ -77,7 +77,7 @@ public class Grafo
     
     public int[] retornaVizinhos(int vertice)
     {
-        int indexCorreto = vertice - 1;
+        int indexCorreto = vertice;
         int[] tempArray = vertices[indexCorreto].retornaVizinhosV();
         return tempArray;
     }
@@ -107,6 +107,7 @@ public class Grafo
 
         return -1;
     }
+    
 
     public bool removerVertice(string label)
     {

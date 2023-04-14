@@ -43,6 +43,16 @@ public class Lista : Grafo
     {
         return existeArestaP(origem, destino);
     }
+
+    public int retornarQuantVertices()
+    {
+        return vertices.Count;
+    }
+
+    public Vertice retornarVertice(int index)
+    {
+        return vertices[index];
+    }
     
     
 }

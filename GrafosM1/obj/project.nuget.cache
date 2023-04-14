@@ -1,13 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7fWbzA/3M/FgaUt/TLZ3sECHN9KOBQCmR9pPfYxC4q03DC0qR9WiNzxgYGvmnJj4MimnWWYOraBG05EdzPu7Hg==",
+  "dgSpecHash": "tkGKLLeVk4Y68s6ySfLpedebQYGwLtTZLshje13QnJUUgW86wqa49DeQPXmiRjZyrzMNVtk73Uh5BJM6EHoZvw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Bruno\\OneDrive\\Documentos\\Grafos-M1\\GrafosM1\\GrafosM1.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\Bruno\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.14\\microsoft.netcore.app.ref.6.0.14.nupkg.sha512",
-    "C:\\Users\\Bruno\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.14\\microsoft.windowsdesktop.app.ref.6.0.14.nupkg.sha512",
-    "C:\\Users\\Bruno\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.14\\microsoft.aspnetcore.app.ref.6.0.14.nupkg.sha512",
-    "C:\\Users\\Bruno\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.14\\microsoft.netcore.app.host.win-x64.6.0.14.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\marco\\Documents\\GitHub\\Grafos-M1\\GrafosM1\\GrafosM1.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }
