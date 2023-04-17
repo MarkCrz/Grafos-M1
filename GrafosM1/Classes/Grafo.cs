@@ -30,7 +30,7 @@ public class Grafo
         return vertices[indice].retornaLabel();
     }
 
-    protected bool inserirArestaP(int o, int d, float p)
+    protected bool inserirArestaP(int o, int d,double p)
     {
         if (direcionado)
         {
@@ -70,7 +70,7 @@ public class Grafo
         return vertices[origem].existeArestaV(destino);
     }
 
-    public float pesoAresta(int origem, int destino)
+    public double pesoAresta(int origem, int destino)
     {
         return vertices[origem].retornaPesoVertice(destino);
     }

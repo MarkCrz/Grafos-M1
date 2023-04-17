@@ -2,19 +2,19 @@ namespace GrafosM1.Classes;
 
 public class DjikstraClasse
 {
-    private float distancia;
+    private double distancia;
     private Vertice vertice;
     private bool visitado;
 
 
-    public DjikstraClasse(float d, Vertice v)
+    public DjikstraClasse(double d, Vertice v)
     {
         distancia = d;
         vertice = v;
         visitado = false;
     }
 
-    public void alterarDistancia(float d)
+    public void alterarDistancia(double d)
     {
         distancia = d;
     }
@@ -24,7 +24,7 @@ public class DjikstraClasse
         visitado = true;
     }
 
-    public float retornarDistancia()
+    public double retornarDistancia()
     {
         return distancia;
     }
@@ -37,5 +37,10 @@ public class DjikstraClasse
     public Vertice retornarVertice()
     {
         return vertice;
+    }
+
+    public string retorarLabelVertice()
+    {
+        return vertice.retornaLabel();
     }
 }

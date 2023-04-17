@@ -16,7 +16,7 @@ public class Vertice
         return label;
     }
 
-    public void AddAresta(int o, int d, float p)
+    public void AddAresta(int o, int d, double p)
     {
         Aresta tempAresta = new Aresta(o, d, p);
         arestas.Add(tempAresta);
@@ -58,7 +58,7 @@ public class Vertice
             {
                 if (arestas[j].retornaDestino() == i)
                 {
-                    Console.Write((arestas[j].retornaDestino() + 1) + " ");
+                    Console.Write((arestas[j].retornaDestino()) + " ");
                 }
             }
         }
@@ -77,9 +77,9 @@ public class Vertice
         return false;
     }
 
-    public float retornaPesoVertice(int destino)
+    public double retornaPesoVertice(int destino)
     {
-        float peso = 0;
+        double peso = 0;
         for (var i = 0; i < arestas.Count; i++)
         {
             if (arestas[i].retornaDestino() == destino)
@@ -134,7 +134,7 @@ public class Vertice
         return arestas[i].retornaDestino();
     }
 
-    public float retornarPesoDjikstra(int index)
+    public double retornarPesoDjikstra(int index)
     {
         return (arestas[index].retornaPeso());
     }

@@ -54,7 +54,7 @@ public class ArquivoTexto
         string[] dados;
         int origem;
         int destino;
-        float pond = 0;
+        double pond = 0;
         
         while (linha != null)
         {
@@ -63,11 +63,11 @@ public class ArquivoTexto
             origem = int.Parse(dados[0]);
             destino = int.Parse(dados[1]);
             pond = 0;
-            Console.Write("Origem: " + dados[0] + "Destino: " + dados[1] + "Peso: " + dados[2]);
+            //Console.Write("Origem: " + dados[0] + "Destino: " + dados[1] + "Peso: " + dados[2]);
 
             if (dados.Length == 3)
             {
-                pond = float.Parse(dados[2]);
+                pond = double.Parse(dados[2]);
             }
 
             lista.inserirAresta(origem, destino, pond);

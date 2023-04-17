@@ -19,7 +19,7 @@ public class Lista : Grafo
         return labelVerticeP(indice);
     }
     
-    public bool inserirAresta(int o, int d, float p)
+    public bool inserirAresta(int o, int d, double p)
     {
         return inserirArestaP(o, d, p);
     }
@@ -33,7 +33,7 @@ public class Lista : Grafo
     {
         for (var i = 0; i < vertices.Count; i++)
         {
-            Console.Write((i + 1) + " - ");
+            Console.Write((i) + " - ");
             vertices[i].imprimeArestasLista(vertices.Count);
             Console.Write("\n");
         }

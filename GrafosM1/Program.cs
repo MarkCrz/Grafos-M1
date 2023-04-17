@@ -70,10 +70,11 @@ using GrafosM1.Classes;
     listaTxt.imprimeGrafo();
     
     BuscaLarguraLista buscaLarguraLista = new BuscaLarguraLista(listaTxt);
-    buscaLarguraLista.BuscarLarguraLista(0, 1);
+    buscaLarguraLista.BuscarLarguraLista(0, 2);
     Console.Write("\n\n");
     BuscaProfundidade buscaProfundidade = new BuscaProfundidade(listaTxt);
-    buscaProfundidade.buscarProfundidade(0, 1);
+    buscaProfundidade.buscarProfundidade(0, 2);
     Console.Write("\n\n");
     Djikstra djikstra = new Djikstra(listaTxt);
     djikstra.buscarDjikstra(0);
+    djikstra.retornarCaminho();

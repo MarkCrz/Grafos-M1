@@ -4,9 +4,9 @@ public class Aresta
 {
     private int origem;
     private int destino;
-    private float peso;
+    private double peso;
 
-    public Aresta(int o, int d, float p)
+    public Aresta(int o, int d, double p)
     {
         origem = o;
         destino = d;
@@ -23,7 +23,7 @@ public class Aresta
         return destino;
     }
 
-    public float retornaPeso()
+    public double retornaPeso()
     {
         return peso;
     }
