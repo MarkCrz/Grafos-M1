@@ -3,24 +3,28 @@ namespace GrafosM1.Classes;
 public class Djikstra
 {
     private List<DjikstraClasse> djikstraClasses;
-    private List<Vertice> a;
-    private List<DjikstraClasse> q;
-    private Lista grafo;
+    private List<Vertice> vertices;
+    //private List<DjikstraClasse> q;
+    //private Lista grafo;
 
     public Djikstra(Lista g)
     {
-        grafo = g;
+        //grafo = g;
         djikstraClasses = new List<DjikstraClasse>();
         for (int i = 0; i < g.retornarQuantVertices(); i++)
         {
-            DjikstraClasse djikstraClasse = new DjikstraClasse(-1, g.retornarVertice(i));
+            DjikstraClasse djikstraClasse = new DjikstraClasse(Double.MaxValue, g.retornarVertice(i));
             djikstraClasses.Add(djikstraClasse);
         }
-        a = new List<Vertice>();
-        q = djikstraClasses;
+        vertices = new List<Vertice>();
+        for (int i = 0; i < g.retornarQuantVertices(); i++)
+        {
+            vertices.Add(g.retornarVertice(i));
+        }
+        //q = djikstraClasses;
     }
 
-    public int retornarIndex(string label)
+    /*public int retornarIndex(string label)
     {
         int ind = 0;
         for (int i = 0; i < q.Count; i++)
@@ -88,7 +92,7 @@ public class Djikstra
                // index = vertice.retornarDestinoDjikstra(i);
               //  menorDistancia = vertice.retornarPesoDjikstra(i);
             //}
-        //}*/
+        //}
         
         return index;
     }
@@ -124,13 +128,57 @@ public class Djikstra
             
             
         }
-    }
+    }*/
 
     public void retornarCaminho()
     {
-        for (int i = 0; i < a.Count; i++)
+        for (int i = 0; i < djikstraClasses.Count; i++)
         {
-            Console.Write(a[i].retornaLabel() + " ");
+            Console.WriteLine("Vertice: " + i + " - Distancia: " + djikstraClasses[i].retornarDistancia());
         }
+    }
+    
+
+    public void buscaDjikstra(int origem)
+    {
+        djikstraClasses[origem].alterarDistancia(0);
+        while (true)
+        {
+            int visitado = -1;
+            double menorDistancia = double.MaxValue;
+
+            for (int i = 0; i < djikstraClasses.Count; i++)
+            {
+                if (!djikstraClasses[i].retornarVisitado() && djikstraClasses[i].retornarDistancia() < menorDistancia)
+                {
+                    visitado = i;
+                    menorDistancia = djikstraClasses[i].retornarDistancia();
+                }
+            }
+            
+            if (visitado == -1)
+            {
+                break;
+            }
+            
+            djikstraClasses[visitado].alterarVisitado();
+            for (int i = 0; i < vertices[visitado].retornarQuantArestas(); i++)
+            {
+                int destino = vertices[visitado].retornarDestino(i);
+
+                if (djikstraClasses[destino].retornarVisitado() == false)
+                {
+                    
+                    double novaDistancia = djikstraClasses[visitado].retornarDistancia() + vertices[visitado].retornarPesoDjikstra(i);
+                    if (novaDistancia < djikstraClasses[destino].retornarDistancia() || djikstraClasses[destino].retornarDistancia() == 0)
+                    {
+                        djikstraClasses[destino].alterarDistancia(novaDistancia);
+                    }
+                }
+            }
+            
+        }
+        
+        retornarCaminho();
     }
 }
