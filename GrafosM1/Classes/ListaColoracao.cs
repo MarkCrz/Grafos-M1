@@ -4,17 +4,18 @@ public class ListaColoracao
 {
     private List<Coloracao> coloracoes;
 
-    public ListaColoracao(Lista lista)
+    public ListaColoracao()
     {
         coloracoes = new List<Coloracao>();
-        ordernarVertices(lista);
     }
 
-    private void ordernarVertices(Lista lista)
+    public void ordernarVertices(Lista lista)
     {
+        Vertice vTemp;
+        
         for (int i = 0; i < lista.retornarQuantVertices(); i++)
         {
-            Vertice vTemp = lista.retornarVertice(i);
+            vTemp = lista.retornarVertice(i);
             Coloracao cT = new Coloracao(vTemp, vTemp.retornarQuantArestas());
             if (coloracoes.Count == 0)
             {
@@ -22,14 +23,31 @@ public class ListaColoracao
             }
             else
             {
-                for (int j = 0; j < coloracoes.Count; j++)
-                {
-                    if (vTemp.retornarQuantArestas() >= coloracoes[j].getGrau())
-                    {
-                        coloracoes.Insert(j, cT);
-                    }
-                }
+                inserirColoracao(vTemp, cT, coloracoes.Count);
             }
+        }
+    }
+
+    private void inserirColoracao(Vertice v, Coloracao c, int t)
+    {
+        bool eMaior = true;
+        for (int i = 0; i < t; i++)
+        {
+            if (v.retornarQuantArestas() >= coloracoes[i].getGrau() && v.retornaLabel() != coloracoes[i].getVerticeLabel())
+            {
+                coloracoes.Insert(i, c);
+                eMaior = true;
+                break;
+            }
+            else
+            {
+                eMaior = false;
+            }
+        }
+
+        if (eMaior == false)
+        {
+            coloracoes.Add(c);
         }
     }
 
@@ -37,10 +55,7 @@ public class ListaColoracao
     {
         foreach (var coloracao in coloracoes)
         {
-            Console.WriteLine("V: " + coloracao.getVerticeLabel() + "G: " + coloracao.getGrau() + "C: " + coloracao.getCor() + "S: " + coloracao.getSaturacao());
-        }
-        {
-            
+            Console.WriteLine("V: " + coloracao.getVerticeLabel() + ", G: " + coloracao.getGrau() + ", C: " + coloracao.getCor() + ", S: " + coloracao.getSaturacao());
         }
     }
     

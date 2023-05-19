@@ -15,6 +15,10 @@ public class Coloracao
         saturacao = 0;
     }
 
+    public void setVertice(Vertice v)
+    {
+        vertice = v;
+    }
     public Vertice getVertice()
     {
         return vertice;
@@ -25,6 +29,11 @@ public class Coloracao
         return vertice.retornaLabel();
     }
 
+    public void setGrau(int g)
+    {
+        grau = g;
+    }
+    
     public int getGrau()
     {
         return grau;

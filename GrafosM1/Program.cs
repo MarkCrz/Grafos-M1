@@ -63,8 +63,9 @@ using GrafosM1.Classes;
 
     listaTxt.verificarPlanaridade();
 
-    ListaColoracao listaColoracao = new ListaColoracao(listaTxt);
-
+    ListaColoracao listaColoracao = new ListaColoracao();
+    
+    listaColoracao.ordernarVertices(listaTxt);
     listaColoracao.imprimirLista();
 
 

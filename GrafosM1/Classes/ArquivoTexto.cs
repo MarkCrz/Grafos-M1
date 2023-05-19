@@ -41,7 +41,7 @@ public class ArquivoTexto
 
         for (int i = 0; i < quantVertices; i++)
         {
-            tempLista.inserirVertice(" " + i);
+            tempLista.inserirVertice("" + i);
         }
         
         Console.Write("Lista criada com sucesso!\n");
