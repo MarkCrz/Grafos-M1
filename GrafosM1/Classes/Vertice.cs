@@ -96,7 +96,7 @@ public class Vertice
         int[] tempArray = new int[arestas.Count];
         for (var i = 0; i < arestas.Count; i++)
         {
-            tempArray[i] = (arestas[i].retornaDestino() + 1);
+            tempArray[i] = (arestas[i].retornaDestino());
         }
 
         return tempArray;

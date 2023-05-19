@@ -53,28 +53,28 @@ using GrafosM1.Classes;
     
     Console.Write("\n\n");
 
-    ArquivoTexto arquivoTexto = new ArquivoTexto("C:\\Users\\marco\\Documents\\GitHub\\Grafos-M1\\GrafosM1\\teste.txt" ,"C:\\Users\\marco\\Documents\\GitHub\\Sattra-Parking\\Escrita.txt");
+    ArquivoTexto arquivoTexto = new ArquivoTexto("C:\\Users\\marco\\Documents\\GitHub\\Grafos-M1\\GrafosM1\\Leitura.txt" ,"C:\\Users\\marco\\Documents\\GitHub\\Grafos-M1\\GrafosM1\\Escrita.txt");
 
     Lista listaTxt = arquivoTexto.criarGrafoLista();
 
     listaTxt = arquivoTexto.inserirArestas(listaTxt);
 
-    //Console.Write("\nVizinhos: ");
-    //vizinhos = listaTxt.retornaVizinhos(0);
-
-    //foreach (var vizinho  in vizinhos)
-    //{
-    //    Console.Write(vizinho + " ");
-    //}
-    
     listaTxt.imprimeGrafo();
-    
-    BuscaLarguraLista buscaLarguraLista = new BuscaLarguraLista(listaTxt);
-    buscaLarguraLista.BuscarLarguraLista(0, 4);
-    Console.Write("\n\n");
-    BuscaProfundidade buscaProfundidade = new BuscaProfundidade(listaTxt);
-    buscaProfundidade.buscarProfundidade(0, 4);
-    Console.Write("\n\n");
-    Djikstra djikstra = new Djikstra(listaTxt);
-    djikstra.buscaDjikstra(1);;
+
+    listaTxt.verificarPlanaridade();
+
+    ListaColoracao listaColoracao = new ListaColoracao(listaTxt);
+
+    listaColoracao.imprimirLista();
+
+
+
+/*BuscaLarguraLista buscaLarguraLista = new BuscaLarguraLista(listaTxt);
+buscaLarguraLista.BuscarLarguraLista(1, 4);
+Console.Write("\n\n");
+BuscaProfundidade buscaProfundidade = new BuscaProfundidade(listaTxt);
+buscaProfundidade.buscarProfundidade(1, 4);
+Console.Write("\n\n");
+Djikstra djikstra = new Djikstra(listaTxt);
+djikstra.buscaDjikstra(1);;*/
     //djikstra.retornarCaminho();

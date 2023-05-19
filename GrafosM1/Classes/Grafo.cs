@@ -5,12 +5,14 @@ public class Grafo
     protected List<Vertice> vertices;
     protected bool direcionado;
     protected bool ponderado;
+    protected int quantArestas;
 
     protected Grafo(bool d, bool p)
     {
         direcionado = d;
         ponderado = p;
         vertices = new List<Vertice>();
+        quantArestas = -1;
     }
 
     protected bool InserirVerticeP(string label)
@@ -23,6 +25,18 @@ public class Grafo
         }
 
         return false;
+    }
+
+    protected void addContadorArestasG()
+    {
+        if (quantArestas == -1)
+        {
+            quantArestas = 1;
+        }
+        else
+        {
+            quantArestas++;
+        }
     }
 
     protected string labelVerticeP(int indice)

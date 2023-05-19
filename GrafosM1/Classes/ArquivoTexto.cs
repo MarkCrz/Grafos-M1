@@ -58,7 +58,7 @@ public class ArquivoTexto
         
         while (linha != null)
         {
-            Console.Write(linha + "\n");
+            //Console.Write(linha + "\n");
             dados = linha.Split(" ");
             origem = int.Parse(dados[0]);
             destino = int.Parse(dados[1]);
@@ -67,9 +67,10 @@ public class ArquivoTexto
 
             if (dados.Length == 3)
             {
-                pond = double.Parse(dados[2]);
+                pond = double.Parse(dados[2].Replace(".", ","));
             }
-
+            
+            lista.addQuantArestas();
             lista.inserirAresta(origem, destino, pond);
             linha = leitura.ReadLine();
         }
