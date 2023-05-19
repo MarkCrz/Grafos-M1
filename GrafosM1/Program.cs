@@ -67,6 +67,11 @@ using GrafosM1.Classes;
     
     listaColoracao.ordernarVertices(listaTxt);
     listaColoracao.imprimirLista();
+    Console.WriteLine("-----------------------------------");
+    Console.WriteLine("Resultado Welsh Powell: ");
+    listaColoracao.welshPowell();
+    Console.WriteLine("-----------------------------------");
+    listaColoracao.imprimirLista();
 
 
 

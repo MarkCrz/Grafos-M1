@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 namespace GrafosM1.Classes;
 
 public class ListaColoracao
@@ -57,6 +59,69 @@ public class ListaColoracao
         {
             Console.WriteLine("V: " + coloracao.getVerticeLabel() + ", G: " + coloracao.getGrau() + ", C: " + coloracao.getCor() + ", S: " + coloracao.getSaturacao());
         }
+    }
+    
+    private string getCorVerticeLabel(string label)
+    {
+        string cor = "Nenhuma";
+        foreach (var coloracao in coloracoes)
+        {
+            if (coloracao.getVerticeLabel() == label)
+            {
+                return coloracao.getCor();
+            }
+        }
+
+        return cor;
+    }
+
+    private bool vizinhosCor(string cor, Vertice vertice)
+    {
+        bool verificador = true;
+        for (int i = 0; i < vertice.retornarQuantArestas(); i++)
+        {
+            if (getCorVerticeLabel(vertice.retornarDestino(i).ToString()) == cor)
+            {
+                verificador = true;
+                break;
+            }
+            else
+            {
+                verificador = false;
+            }
+        }
+        return verificador;
+    }
+
+    public void welshPowell()
+    {
+        var pintado = 0;
+        var quantCores = 0;
+        string[] cores = { "Verde", "Azul", "Amarelo", "Vermelho", "Roxo" };
+        var sw = new Stopwatch();
+        sw.Start();
+
+        while (pintado < coloracoes.Count)
+        {
+            for (int i = 0; i < cores.Length; i++)
+            {
+                foreach (var coloracao in coloracoes)
+                {
+                    if (coloracao.getCor() == "Nenhuma")
+                    {
+                        if (vizinhosCor(cores[i], coloracao.getVertice()) == false)
+                        {
+                            coloracao.setarCor(cores[i]);
+                            pintado++;
+                            quantCores = i + 1;
+                        }
+                    }
+                }   
+            }
+        }
+        sw.Stop();
+        Console.WriteLine("Quantidade de cores utilizada: " + quantCores);
+        Console.WriteLine("Tempo gasto: " + sw.Elapsed);
     }
     
 }

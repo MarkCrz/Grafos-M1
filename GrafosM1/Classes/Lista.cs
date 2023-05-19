@@ -124,6 +124,19 @@ public class Lista : Grafo
             }
         }
     }
+    
+    public int retornaIndexVerticeL(string label)
+    {
+        for (var i = 0; i < vertices.Count; i++)
+        {
+            if (vertices[i].retornaLabel() == label)
+            {
+                return i;
+            }
+        }
+
+        return -1;
+    }
 
 
 }
