@@ -64,7 +64,9 @@ using GrafosM1.Classes;
     listaTxt.verificarPlanaridade();
 
     ListaColoracao listaColoracao = new ListaColoracao();
+    ListaColoracao listaColoracaoD = new ListaColoracao();
     
+    Console.WriteLine("Welsh Powell: ");
     listaColoracao.ordernarVertices(listaTxt);
     listaColoracao.imprimirLista();
     Console.WriteLine("-----------------------------------");
@@ -72,6 +74,15 @@ using GrafosM1.Classes;
     listaColoracao.welshPowell();
     Console.WriteLine("-----------------------------------");
     listaColoracao.imprimirLista();
+
+    Console.WriteLine("DSATUR: ");
+    listaColoracaoD.ordernarVertices(listaTxt);
+    listaColoracaoD.imprimirLista();
+    Console.WriteLine("-----------------------------------");
+    Console.WriteLine("Resultado Dsatur: ");
+    listaColoracaoD.dsatur();
+    Console.WriteLine("-----------------------------------");
+    listaColoracaoD.imprimirLista();
 
 
 

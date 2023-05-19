@@ -123,5 +123,73 @@ public class ListaColoracao
         Console.WriteLine("Quantidade de cores utilizada: " + quantCores);
         Console.WriteLine("Tempo gasto: " + sw.Elapsed);
     }
+
     
+    private void vizinhosSaturacao(Vertice vertice)
+    {
+        for (int i = 0; i < vertice.retornarQuantArestas(); i++)
+        {
+            mudarGrauVizinhos(vertice.retornarDestino(i).ToString());
+        }
+    }
+    
+    private void mudarGrauVizinhos(string label)
+    {
+        foreach (var coloracao in coloracoes)
+        {
+            if (coloracao.getVerticeLabel() == label)
+            {
+                coloracao.setarSaturacao((coloracao.getSaturacao() + 1));
+            }
+        }
+    }
+    public void dsatur()
+    {
+        var pintado = 0;
+        var quantCores = 0;
+        string[] cores = { "Verde", "Azul", "Amarelo", "Vermelho", "Roxo" };
+        bool[] usouCor = { false, false, false, false, false };
+        var index = -1;
+        var maiorSaturacao = -1;
+        var sw = new Stopwatch();
+        sw.Start();
+
+        while (pintado < coloracoes.Count)
+        {
+            maiorSaturacao = -1;
+            foreach (var coloracao in coloracoes)
+            {
+                if (coloracao.getSaturacao() > maiorSaturacao)
+                {
+                    
+                    if (coloracao.getCor() == "Nenhuma")
+                    {
+                        maiorSaturacao = coloracao.getSaturacao();
+                        for (int i = 0; i < cores.Length; i++)
+                        {
+                            if (vizinhosCor(cores[i], coloracao.getVertice()) == false)
+                            {
+                                coloracao.setarCor(cores[i]);
+                                pintado++;
+                                usouCor[i] = true;
+                                vizinhosSaturacao(coloracao.getVertice());
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        sw.Stop();
+
+        for (int i = 0; i < usouCor.Length; i++)
+        {
+            if (usouCor[i] == true)
+            {
+                quantCores++;
+            }
+        }
+        Console.WriteLine("Quantidade de cores utilizada: " + quantCores);
+        Console.WriteLine("Tempo gasto: " + sw.Elapsed);
+    }
 }
